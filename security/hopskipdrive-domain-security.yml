@@ -1,0 +1,71 @@
+generated: '2026-08-04'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml hosts + hosts discovered in RideIQ env-config.js
+hosts:
+- host: www.hopskipdrive.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 24 19:03:47 2026 GMT
+  hsts: null
+  note: marketing site (Next.js); no Strict-Transport-Security header observed
+- host: api.hopskipdrive.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  3 23:59:59 2026 GMT
+  hsts: true
+  hsts_max_age: 7776000
+  hsts_include_subdomains: false
+  note: private RideIQ/app backend API host; every unauthenticated path probed returned 404
+- host: rideiq.hopskipdrive.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  3 23:59:59 2026 GMT
+  hsts: true
+  hsts_max_age: 7776000
+  hsts_include_subdomains: true
+  server: nginx
+  note: RideIQ single-page web application (account-gated)
+- host: events.hopskipdrive.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  3 23:59:59 2026 GMT
+  hsts: null
+  note: WebSocket event stream host (wss://events.hopskipdrive.com/ws/sub)
+- host: status.hopskipdrive.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov  1 23:59:59 2026 GMT
+  hsts: null
+  note: Status.io-hosted public status page
+- host: trust.hopskipdrive.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 12 18:08:42 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+  hsts_include_subdomains: true
+  server: cloudflare
+  note: Vanta-hosted trust center
+- host: help.hopskipdrive.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  2 23:50:46 2026 GMT
+  hsts: true
+  hsts_max_age: 259200
+  hsts_include_subdomains: true
+  server: cloudflare
+  note: Zendesk Guide help center
+domains:
+- domain: hopskipdrive.com
+  dnssec: true
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
+x-evidence:
+  probed: '2026-08-04'
+  method: openssl s_client + curl -I + dig
+  notes: >-
+    Absence of a CAA record set and absence of HSTS on www/events/status is recorded
+    as observed fact, not inferred. api./rideiq. HSTS max-age is 7776000 (90 days),
+    below the 31536000 (1 year) HSTS-preload threshold.

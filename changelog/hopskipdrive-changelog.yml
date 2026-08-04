@@ -1,0 +1,90 @@
+generated: '2026-08-04'
+method: searched
+source: https://help.hopskipdrive.com/hc/en-us/articles/44647776547348-What-s-New-in-RideIQ
+scope: product
+note: >-
+  HopSkipDrive publishes dated product release notes in its Zendesk help center — one
+  per surface (RideIQ web, HopSkipDrive family app, CareDriver app). There is no API
+  changelog, because there is no public API. Entries below are the recent window
+  captured verbatim-in-substance from the published "What's New" articles; the live
+  articles remain the source of truth.
+scheme: dated-release-notes
+current_version: null
+sources:
+- surface: RideIQ (web platform)
+  url: https://help.hopskipdrive.com/hc/en-us/articles/44647776547348-What-s-New-in-RideIQ
+  last_updated: '2026-02-18'
+- surface: HopSkipDrive app (families / caregivers)
+  url: https://help.hopskipdrive.com/hc/en-us/articles/44647789312916-What-s-New-in-the-HopSkipDrive-App
+  last_updated: '2026-07-09'
+- surface: CareDriver app (drivers)
+  url: https://help.hopskipdrive.com/hc/en-us/articles/44647840692372-What-s-New-in-the-CareDriver-App
+  last_updated: '2026-07-09'
+entries:
+- date: '2025-07-15'
+  surface: RideIQ
+  breaking: false
+  highlights:
+  - Three structured "Must Be Met" drop-off protocols for riders who must be met by an adult
+  - Authorized Individual groups with associated escalation numbers
+  - Three verification requirements for adults meeting a rider
+- date: '2025-07-15'
+  surface: CareDriver app
+  breaking: false
+  highlights:
+  - Must Be Met requirement now set at the location level rather than the rider level
+  - Must Be Met protocols surfaced in-app with verification requirements
+  - Additional escalation numbers when an Authorized Individual cannot be located
+- date: '2025-06-26'
+  surface: RideIQ
+  breaking: false
+  highlights:
+  - Estimated Pickup Time column added to the main Rides page
+  - ETA refreshes every two minutes from live CareDriver data
+- date: '2025-05-14'
+  surface: CareDriver app
+  breaking: false
+  highlights:
+  - Improved Advanced Qualification management and discovery in the driver profile
+- date: '2025-04-30'
+  surface: CareDriver app
+  breaking: false
+  highlights:
+  - CareDriver Rewards program introduced with Standard, Gold and Elite tiers on a three-month points cycle
+- date: '2025-03-28'
+  surface: RideIQ
+  breaking: false
+  highlights:
+  - Rider pause start and end dates can now be changed at any time without rebuilding the Ride Series
+- date: '2025-03-12'
+  surface: RideIQ
+  breaking: false
+  highlights:
+  - Riders can be designated as Rider Aides via a rider-profile checkbox
+  - Smarter cancellation logic cancels aide rides when the main passenger is not riding
+- date: '2025-03-05'
+  surface: CareDriver app
+  breaking: false
+  highlights:
+  - Apartment and suite numbers shown as part of the main address rather than in notes
+- date: '2025-02-26'
+  surface: RideIQ
+  breaking: false
+  highlights:
+  - Apartment/suite numbers moved into a dedicated Address 2 field when creating locations
+- date: '2025-02-25'
+  surface: CareDriver app
+  breaking: false
+  highlights:
+  - In-app document upload with enhanced review
+- date: '2025-02-19'
+  surface: HopSkipDrive app
+  breaking: false
+  highlights:
+  - Revamped live ride monitoring with estimated arrival times on the next stop
+  - CareDriver vehicle type and license plate shown throughout
+  - More visible contact options for the CareDriver and HopSkipDrive support
+  - Faster map loading and more precise tracking
+x-evidence:
+  fetched: '2026-08-04'
+  method: Zendesk Help Center API (/api/v2/help_center/en-us/articles/<id>.json)

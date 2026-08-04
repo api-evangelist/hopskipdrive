@@ -1,0 +1,89 @@
+generated: '2026-08-04'
+method: searched
+source: >-
+  HopSkipDrive public surface (help center security article, security blog post,
+  trust center, press release) plus live contract-discovery probes of every known host
+summary: >-
+  HopSkipDrive publishes a security/compliance posture (SOC 2 Type II, NIST CSF) but
+  publishes no machine-readable API contract, no developer portal and no public API
+  documentation. Its platform surface is account-gated commercial software (RideIQ,
+  the HopSkipDrive family app, the CareDriver app). Everything below marked
+  conforms: false is recorded as "not published publicly", not as a technical failure.
+standards:
+- id: soc2-type-ii
+  conforms: true
+  evidence: >-
+    "We're proud to have achieved a SOC 2 Type 2 attestation report" —
+    https://help.hopskipdrive.com/hc/en-us/articles/44647768425492-HopSkipDrive-Information-Security;
+    announced 2025-04-02 via BusinessWire.
+- id: nist-csf
+  conforms: true
+  evidence: >-
+    "Our security program aligns with the NIST Cybersecurity Framework" —
+    HopSkipDrive Information Security help-center article.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returned 404 on hopskipdrive.com, www.hopskipdrive.com and api.hopskipdrive.com
+- id: openapi
+  conforms: false
+  evidence: see discovery.rest below — no OpenAPI/Swagger document served on any host
+- id: asyncapi
+  conforms: false
+  evidence: a WebSocket event stream exists (wss://events.hopskipdrive.com/ws/sub) but no AsyncAPI document is published
+- id: graphql
+  conforms: false
+  evidence: no GraphQL endpoint responded to introspection; rideiq /graphql is an SPA catch-all and POST is rejected 405 by nginx
+- id: mcp
+  conforms: false
+  evidence: no hosted MCP server found in HopSkipDrive docs, GitHub org, or MCP registries
+- id: a2a-agent-card
+  conforms: false
+  evidence: /.well-known/agent-card.json and /.well-known/agent.json returned 404 on all five hosts
+- id: oauth2
+  conforms: unknown
+  evidence: >-
+    no public OAuth metadata; /.well-known/oauth-authorization-server and
+    /.well-known/oauth-protected-resource 404 on api.hopskipdrive.com. RideIQ documents
+    multi-factor authentication for its own users
+    (https://help.hopskipdrive.com/hc/en-us/articles/44647770297236-Multi-factor-Authentication)
+    but publishes no API authorization model.
+- id: rfc9457-problem-details
+  conforms: unknown
+  evidence: no spec and no public error reference to derive from
+discovery:
+  note: >-
+    Full STEP 0b contract discovery was run before recording "no machine-readable
+    contract". The API host was NOT guessed — it was read out of RideIQ's own
+    runtime config (https://rideiq.hopskipdrive.com/env-config.js, which sets
+    RIDEIQ_BASE_DOMAIN=api.hopskipdrive.com, RIDEIQ_API_VERSION=v1 and
+    RIDEIQ_WEBSOCKET_URL=wss://events.hopskipdrive.com/ws/sub) and probed directly.
+  rest:
+  - {url: 'https://api.hopskipdrive.com/openapi.json', status: 404}
+  - {url: 'https://api.hopskipdrive.com/openapi.yaml', status: 404}
+  - {url: 'https://api.hopskipdrive.com/swagger.json', status: 404}
+  - {url: 'https://api.hopskipdrive.com/v1/openapi.json', status: 404}
+  - {url: 'https://api.hopskipdrive.com/api-docs', status: 404}
+  - {url: 'https://api.hopskipdrive.com/docs', status: 404}
+  - {url: 'https://api.hopskipdrive.com/redoc', status: 404}
+  - {url: 'https://api.hopskipdrive.com/rapidoc', status: 404}
+  - {url: 'https://api.hopskipdrive.com/v1', status: 404}
+  - {url: 'https://rideiq.hopskipdrive.com/openapi.json', status: 404}
+  - {url: 'https://www.hopskipdrive.com/llms.txt', status: 404}
+  graphql:
+  - {url: 'https://rideiq.hopskipdrive.com/graphql', status: 200, result: 'SPA HTML shell on GET; POST introspection rejected 405 Not Allowed (nginx) — not a GraphQL endpoint'}
+  - {url: 'https://api.hopskipdrive.com/graphql', status: 404}
+  mcp: []
+  agent_card:
+  - {url: 'https://www.hopskipdrive.com/.well-known/agent-card.json', status: 404}
+  - {url: 'https://www.hopskipdrive.com/.well-known/agent.json', status: 404}
+  - {url: 'https://api.hopskipdrive.com/.well-known/agent-card.json', status: 404}
+  - {url: 'https://api.hopskipdrive.com/.well-known/agent.json', status: 404}
+  - {url: 'https://rideiq.hopskipdrive.com/.well-known/agent-card.json', status: 404}
+  - {url: 'https://rideiq.hopskipdrive.com/.well-known/agent.json', status: 404}
+  - {url: 'https://events.hopskipdrive.com/.well-known/agent-card.json', status: 404}
+  - {url: 'https://events.hopskipdrive.com/.well-known/agent.json', status: 404}
+  docs_search:
+  - {source: 'help.hopskipdrive.com Zendesk Help Center article search for "API"', result: '1 result, and it is "Google Maps Legal Notices" — the help center documents no HopSkipDrive API'}
+  - {source: 'https://github.com/hopskipdrive', result: '24 public repositories, all forks of third-party infrastructure/Ruby/iOS projects (argocd-image-updater, aasm, kaniko, SocketRocket, ...). No first-party SDK, spec, or .proto.'}
+x-evidence:
+  fetched: '2026-08-04'

@@ -1,17 +1,39 @@
 aid: hopskipdrive
 name: HopSkipDrive
-description: 'HopSkipDrive is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'HopSkipDrive is a Los Angeles-based youth and supplemental student transportation
+  company that arranges rides for students who cannot be served by a traditional yellow
+  bus — students with IEPs, students experiencing homelessness under McKinney-Vento,
+  students in foster care, and students on out-of-boundary or hard-to-route trips.
+  Districts, charter networks, county offices, government agencies and nonprofits book
+  and monitor rides through RideIQ, HopSkipDrive''s web platform, while families track
+  trips in the HopSkipDrive mobile app and vetted CareDrivers work from a driver app.
+  The company also sells RouteWise AI, a routing-analysis product that models a district''s
+  student base, fleet and constraints to produce route scenarios. HopSkipDrive reports
+  more than 5 million completed rides across 14,000+ schools and 2,000+ districts. Its
+  platform surface is commercial and account-gated: as of this profile HopSkipDrive
+  publishes no public developer portal, no API documentation and no machine-readable
+  API contract, though its RideIQ front end is backed by a private versioned REST API
+  host and a WebSocket event stream.'
 url: https://raw.githubusercontent.com/api-evangelist/hopskipdrive/refs/heads/main/apis.yml
+image: https://www.hopskipdrive.com/og/6CljbZ9NpKWIwx9e61vFFC.jpg
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment
 specificationVersion: '0.20'
 created: '2026-08-04'
 modified: '2026-08-04'
 tags:
 - Company
+- Transportation
+- Student Transportation
+- Education
+- Mobility
+- Ridesharing
+- School Districts
+- Logistics
+- Routing
+- Government
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +41,50 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/hopskipdrive-domain-security.yml
 - type: Website
+  url: https://www.hopskipdrive.com/
+- type: SecondaryMarket
   url: https://forgeglobal.com/hopskipdrive_stock/
+- type: Support
+  url: https://help.hopskipdrive.com/hc/en-us
+- type: HelpCenter
+  url: https://www.hopskipdrive.com/help-center/
+- type: Blog
+  url: https://www.hopskipdrive.com/blog/
+- type: Newsroom
+  url: https://www.hopskipdrive.com/newsroom/
+- type: Pricing
+  url: https://www.hopskipdrive.com/pricing/
+- type: Login
+  url: https://rideiq.hopskipdrive.com/login
+- type: TermsOfService
+  url: https://www.hopskipdrive.com/terms-of-use/
+- type: PrivacyPolicy
+  url: https://www.hopskipdrive.com/privacy/
+- type: GitHubOrganization
+  url: https://github.com/hopskipdrive
+- type: StatusPage
+  url: https://status.hopskipdrive.com/
+- type: TrustCenter
+  url: security/hopskipdrive-trust-center.yml
+- type: Trust
+  url: https://trust.hopskipdrive.com/
+- type: Compliance
+  url: https://help.hopskipdrive.com/hc/en-us/articles/44647768425492-HopSkipDrive-Information-Security
+- type: Conformance
+  url: conformance/hopskipdrive-conformance.yml
+- type: WellKnown
+  url: well-known/hopskipdrive-well-known.yml
+- type: LLMsTxt
+  url: llms/hopskipdrive-llms.txt
+- type: Lifecycle
+  url: lifecycle/hopskipdrive-lifecycle.yml
+- type: ChangeLog
+  url: changelog/hopskipdrive-changelog.yml
+x-enrichment:
+  date: '2026-08-04'
+  status: enriched
+  artifacts_added: 7
+  pass: local-v1

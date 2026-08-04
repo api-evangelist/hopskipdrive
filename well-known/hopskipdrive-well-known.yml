@@ -1,0 +1,46 @@
+generated: '2026-08-04'
+method: probed
+source: live GET of the /.well-known/ discovery surface on every HopSkipDrive host
+summary:
+  documents_found: 0
+  hosts_probed: 5
+  note: >-
+    HopSkipDrive publishes no /.well-known/ discovery documents. Every path below
+    returned 404. www.hopskipdrive.com and rideiq.hopskipdrive.com answer 404 with an
+    HTML shell (Next.js / SPA), api.hopskipdrive.com answers 404 with an HTML error
+    body, and events.hopskipdrive.com answers 404 text/plain — no host returned a
+    JSON or RFC 9116 document. No raw files were saved because there was nothing to save.
+hosts:
+- host: https://www.hopskipdrive.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /llms.txt, status: 404}
+- host: https://hopskipdrive.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+- host: https://api.hopskipdrive.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://rideiq.hopskipdrive.com
+  documents:
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://events.hopskipdrive.com
+  documents:
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+x-evidence:
+  fetched: '2026-08-04'
+  method: curl -sIL --max-time 12

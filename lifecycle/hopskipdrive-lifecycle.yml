@@ -1,0 +1,40 @@
+generated: '2026-08-04'
+method: searched
+source: >-
+  https://status.hopskipdrive.com/ + RideIQ runtime config + HopSkipDrive help center
+versioning:
+  scheme: uri-path
+  current: v1
+  docs: null
+  evidence: >-
+    RIDEIQ_API_VERSION="v1" in https://rideiq.hopskipdrive.com/env-config.js against
+    RIDEIQ_BASE_DOMAIN="api.hopskipdrive.com". No public versioning policy is published.
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  note: HopSkipDrive publishes no API deprecation or sunset policy.
+sla:
+  url: null
+  uptime_target: null
+status_page:
+  url: https://status.hopskipdrive.com/
+  platform: Status.io
+  components:
+  - RideIQ (Web)
+  - Driver App - iOS
+  - Driver App - Android
+  - CareGiver App - Android
+  note: >-
+    Product-level status page. No API component is listed — the status page tracks the
+    web and mobile applications, not an API surface.
+release_notes:
+- name: What's New in RideIQ
+  url: https://help.hopskipdrive.com/hc/en-us/articles/44647776547348-What-s-New-in-RideIQ
+- name: What's New in the HopSkipDrive App
+  url: https://help.hopskipdrive.com/hc/en-us/articles/44647789312916-What-s-New-in-the-HopSkipDrive-App
+- name: What's New in the CareDriver App
+  url: https://help.hopskipdrive.com/hc/en-us/articles/44647840692372-What-s-New-in-the-CareDriver-App
+deprecated_operations: []
+x-evidence:
+  fetched: '2026-08-04'
+  status_page_http_status: 200

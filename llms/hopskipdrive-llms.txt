@@ -1,0 +1,61 @@
+# HopSkipDrive
+
+> HopSkipDrive is a supplemental student transportation company. School districts,
+> charter networks, county offices, government agencies and nonprofits book and monitor
+> rides through RideIQ, HopSkipDrive's web platform; families track trips in the
+> HopSkipDrive mobile app; vetted CareDrivers work from a driver app. RouteWise AI is
+> HopSkipDrive's routing-analysis product for modelling a district's fleet, student base
+> and constraints. HopSkipDrive reports 5M+ completed rides across 14,000+ schools and
+> 2,000+ districts.
+
+**API status: no public API.** As of 2026-08-04 HopSkipDrive publishes no developer
+portal, no API documentation, no OpenAPI/AsyncAPI/GraphQL contract, no MCP server and no
+A2A agent card. Its platform is account-gated commercial software. A private versioned
+REST backend (`api.hopskipdrive.com`, `v1`) and a WebSocket event stream
+(`wss://events.hopskipdrive.com/ws/sub`) back the RideIQ web app, but neither is
+documented for third-party use and every unauthenticated path returns 404. Do not
+attempt to call them; contact HopSkipDrive for integration.
+
+## Company
+
+- [HopSkipDrive](https://www.hopskipdrive.com/): Company homepage.
+- [About](https://www.hopskipdrive.com/about/): Company background.
+- [Solutions](https://www.hopskipdrive.com/solutions/): School transportation solutions overview.
+- [Schools](https://www.hopskipdrive.com/schools/): Offering for districts and charter networks.
+- [Supplemental transportation](https://www.hopskipdrive.com/supplemental-transportation/): The core service.
+- [Special needs / IEP transportation](https://www.hopskipdrive.com/special-needs-iep-transportation/): IEP and special-needs rides.
+- [Safety](https://www.hopskipdrive.com/safety/): Safety program and CareDriver vetting.
+- [Newsroom](https://www.hopskipdrive.com/newsroom/): Press and announcements.
+- [Blog](https://www.hopskipdrive.com/blog/): Product, policy and industry writing.
+- [Reports](https://www.hopskipdrive.com/reports/): Published research and safety reports.
+
+## Platform
+
+- [RideIQ](https://rideiq.hopskipdrive.com/login): Account-gated web platform for ride organizers (login required).
+- [Pricing](https://www.hopskipdrive.com/pricing/): Pricing overview.
+- [Get a quote](https://www.hopskipdrive.com/quote/): Sales intake for districts and agencies.
+- [Status](https://status.hopskipdrive.com/): Public Status.io page covering RideIQ web, the driver apps and the caregiver app.
+
+## Support and release notes
+
+- [Help center](https://help.hopskipdrive.com/hc/en-us): Zendesk help center for families, CareDrivers and district staff.
+- [What's New in RideIQ](https://help.hopskipdrive.com/hc/en-us/articles/44647776547348-What-s-New-in-RideIQ): Dated RideIQ release notes.
+- [What's New in the HopSkipDrive App](https://help.hopskipdrive.com/hc/en-us/articles/44647789312916-What-s-New-in-the-HopSkipDrive-App): Family app release notes.
+- [What's New in the CareDriver App](https://help.hopskipdrive.com/hc/en-us/articles/44647840692372-What-s-New-in-the-CareDriver-App): Driver app release notes.
+
+## Security, trust and legal
+
+- [Trust center](https://trust.hopskipdrive.com/): Vanta-hosted trust center.
+- [HopSkipDrive Information Security](https://help.hopskipdrive.com/hc/en-us/articles/44647768425492-HopSkipDrive-Information-Security): SOC 2 Type II attestation; security program aligned to the NIST Cybersecurity Framework.
+- [Terms of use](https://www.hopskipdrive.com/terms-of-use/)
+- [Privacy policy](https://www.hopskipdrive.com/privacy/)
+- [Pricing and payment terms](https://www.hopskipdrive.com/pricing-and-payment-terms/)
+
+## Code
+
+- [GitHub organization](https://github.com/hopskipdrive): 24 public repositories, all forks of third-party infrastructure, Ruby and iOS projects. No first-party SDK, API specification or protobuf definition is published.
+
+## Optional
+
+- [API Evangelist profile](https://raw.githubusercontent.com/api-evangelist/hopskipdrive/refs/heads/main/apis.yml): This third-party APIs.json profile.
+- [Contract discovery record](https://raw.githubusercontent.com/api-evangelist/hopskipdrive/refs/heads/main/conformance/hopskipdrive-conformance.yml): Every URL probed while establishing that no machine-readable contract is published, with HTTP status codes.

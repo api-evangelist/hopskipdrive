@@ -1,0 +1,43 @@
+generated: '2026-08-04'
+method: searched
+probe: true
+url: https://trust.hopskipdrive.com/
+platform: Vanta Trust Center
+certifications:
+- SOC 2 Type II
+frameworks:
+- NIST Cybersecurity Framework
+statements:
+- text: >-
+    We're proud to have achieved a SOC 2 Type 2 attestation report, demonstrating our
+    commitment to upholding the highest standards of information security. We've
+    implemented a comprehensive suite of administrative, technical, and physical
+    safeguards designed to ensure your data is confidential, maintained with integrity,
+    and available to you when you need it. Our security program aligns with the NIST
+    Cybersecurity Framework.
+  source: https://help.hopskipdrive.com/hc/en-us/articles/44647768425492-HopSkipDrive-Information-Security
+evidence:
+- source: https://trust.hopskipdrive.com/
+  http_status: 200
+  kind: trust-center
+  keywords: [trust center, security, compliance]
+  note: >-
+    Client-rendered Vanta trust report (assets.vanta.com/static/index-trust-report.*).
+    The raw HTML carries the title "HopSkipDrive Trust Center" and the Vanta signature
+    manifest; the certification list itself renders client-side and was not machine-read,
+    so certifications here are taken from HopSkipDrive's own published statements below.
+- source: https://help.hopskipdrive.com/hc/en-us/articles/44647768425492-HopSkipDrive-Information-Security
+  http_status: 200
+  kind: security-statement
+  keywords: [soc 2 type 2, nist cybersecurity framework]
+- source: https://www.hopskipdrive.com/blog/raising-the-bar-for-data-security-in-student-transportation/
+  http_status: 200
+  kind: announcement
+  keywords: [soc 2 type ii, soc 2 type i, nist cybersecurity framework, encryption in transit and at rest]
+- source: https://www.businesswire.com/news/home/20250402996307/en/HopSkipDrive-Achieves-SOC-2-Type-II-Compliance-Setting-New-Standard-in-Student-Transportation
+  kind: press-release
+  keywords: [soc 2 type ii]
+gaps:
+- no_security_txt: /.well-known/security.txt returned 404 on hopskipdrive.com, www.hopskipdrive.com and api.hopskipdrive.com
+- no_public_vulnerability_disclosure_policy: no responsible-disclosure or bug-bounty page found (no HackerOne/Bugcrowd/Intigriti program located)
+- no_published_security_contact: no security@ address published on the public surface
