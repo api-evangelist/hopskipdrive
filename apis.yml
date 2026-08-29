@@ -15,6 +15,17 @@ description: 'HopSkipDrive is a Los Angeles-based youth and supplemental student
   API contract, though its RideIQ front end is backed by a private versioned REST API
   host and a WebSocket event stream.'
 url: https://raw.githubusercontent.com/api-evangelist/hopskipdrive/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://www.hopskipdrive.com/og/6CljbZ9NpKWIwx9e61vFFC.jpg
 x-type: company
 x-source: harvest:secondary-market
